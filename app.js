@@ -78,9 +78,11 @@ window.addEventListener('load', async () => {
             initApp();
         } catch (error) {
             console.error("Access to your Ethereum account rejected.");
+			alert("Access to your Ethereum account rejected.");
         }
     } else {
         console.error("Please install MetaMask!");
+		alert("Please Install metamask");
     }
 });
  
@@ -90,18 +92,21 @@ function initApp() {
     document.getElementById('connectWallet').addEventListener('click', async () => {
         accounts = await web3.eth.getAccounts();
         console.log("Connected account:", accounts[0]);
+		alert("Wallet Connected");
     });
  
     document.getElementById('enterLottery').addEventListener('click', () => {
         contract.methods.enter().send({ from: accounts[0], value: web3.utils.toWei("0.01", "ether") })
         .then(() => console.log("Entered the lottery!"))
         .catch(console.error);
+		alert("Lottery Entered, click CONFIRM when Metamask popup");
     });
  
     document.getElementById('pickWinner').addEventListener('click', () => {
         contract.methods.pickWinner().send({ from: accounts[0] })
         .then(() => console.log("Winner picked!"))
         .catch(console.error);
+		alert("Winner Picked");
     });
  
     // Fetch and display participants
