@@ -2,6 +2,11 @@ const contractAddress = "0xA8500e51A0e44816887a8DFbbcbB230bE73052E1";
 const abi = [
 	{
 		"inputs": [],
+		"stateMutability": "nonpayable",
+		"type": "constructor"
+	},
+	{
+		"inputs": [],
 		"name": "enter",
 		"outputs": [],
 		"stateMutability": "payable",
@@ -11,60 +16,11 @@ const abi = [
 		"inputs": [],
 		"name": "pickWinner",
 		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"stateMutability": "nonpayable",
-		"type": "constructor"
-	},
-	{
-		"inputs": [],
-		"name": "getParticipants",
-		"outputs": [
-			{
-				"internalType": "address payable[]",
-				"name": "",
-				"type": "address[]"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "manager",
-		"outputs": [
-			{
-				"internalType": "address payable",
-				"name": "",
-				"type": "address"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"name": "participants",
-		"outputs": [
-			{
-				"internalType": "address payable",
-				"name": "",
-				"type": "address"
-			}
-		],
-		"stateMutability": "view",
+		"stateMutability": "payable",
 		"type": "function"
 	}
-];
+]
+	;
  
 let contract;
 let web3;
