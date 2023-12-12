@@ -18,6 +18,19 @@ const abi = [
 		"outputs": [],
 		"stateMutability": "payable",
 		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "getParticipants",
+		"outputs": [
+			{
+				"internalType": "address payable[]",
+				"name": "",
+				"type": "address[]"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
 	}
 ]
 	;
