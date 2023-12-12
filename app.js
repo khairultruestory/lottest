@@ -1,4 +1,4 @@
-const contractAddress = "0x7815c51016807555d5dd1364b618c4b42da81fA9";
+const contractAddress = "0xA8500e51A0e44816887a8DFbbcbB230bE73052E1";
 const abi = [
 	{
 		"inputs": [],
@@ -38,8 +38,7 @@ const abi = [
 		"stateMutability": "view",
 		"type": "function"
 	}
-]
-	;
+];
  
 let contract;
 let web3;
@@ -53,6 +52,7 @@ window.addEventListener('load', async () => {
             initApp();
         } catch (error) {
             console.error("Access to your Ethereum account rejected.");
+			alert("Access to your Ethereum account rejected.");
         }
     } else {
         console.error("Please install MetaMask!");
@@ -73,22 +73,23 @@ function initApp() {
         contract.methods.enter().send({ from: accounts[0], value: web3.utils.toWei("0.01", "ether") })
         .then(() => console.log("Entered the lottery!"))
         .catch(console.error);
-		alert("Lottery Entered, quickly click CONFIRM when Metamask popup");
+		alert("Lottery Entered, click CONFIRM when Metamask popup");
     });
  
     document.getElementById('pickWinner').addEventListener('click', () => {
         contract.methods.pickWinner().send({ from: accounts[0] })
         .then(() => console.log("Winner picked!"))
         .catch(console.error);
-		alert("Winner Clicked");
+		alert("Winner Picked");
     });
  
     // Fetch and display participants
-    contract.methods.players().call()
+    contract.methods.getParticipants().call()
     .then(displayParticipants)
     .catch(console.error);
+	contract.methods.
 }
  
-function displayParticipants(participants) {
-    const participantsList = document.getElementById('participantsList');
-    participantsList.innerHTML = participants.map(address => `<li>${address}</li>`).join('');}
+function displayParticipants(players) {
+    const participantsList = document.getElementById('players');
+    participantsList.innerHTML = players.map(address => `<li>${address}</li>`).join('');}
