@@ -85,7 +85,7 @@ function initApp() {
     });
  
     // Fetch and display participants
-    contract.methods.getParticipants().call()
+    contract.methods.players().call()
     .then(displayParticipants)
     .catch(console.error);
 }
