@@ -1,4 +1,4 @@
-const contractAddress = "0xA8500e51A0e44816887a8DFbbcbB230bE73052E1";
+const contractAddress = "0x01eddfe984d3a11ecea9d8789ef880b30ece9ff9";
 const abi = [
 	{
 		"inputs": [],
@@ -14,9 +14,28 @@ const abi = [
 	},
 	{
 		"inputs": [],
-		"name": "pickWinner",
-		"outputs": [],
-		"stateMutability": "payable",
+		"name": "getParticipants",
+		"outputs": [
+			{
+				"internalType": "address payable[]",
+				"name": "",
+				"type": "address[]"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "owner",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
 		"type": "function"
 	},
 	{
@@ -27,15 +46,22 @@ const abi = [
 				"type": "uint256"
 			}
 		],
-		"name": "players",
+		"name": "participants",
 		"outputs": [
 			{
-				"internalType": "address",
+				"internalType": "address payable",
 				"name": "",
 				"type": "address"
 			}
 		],
 		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "pickWinner",
+		"outputs": [],
+		"stateMutability": "payable",
 		"type": "function"
 	}
 ];
@@ -82,14 +108,13 @@ function initApp() {
         .catch(console.error);
 		alert("Winner Picked");
     });
- 
-    // Fetch and display participants
-    contract.methods.getParticipants().call()
-    .then(displayParticipants)
-    .catch(console.error);
-	contract.methods.
-}
- 
-function displayParticipants(players) {
-    const participantsList = document.getElementById('players');
-    participantsList.innerHTML = players.map(address => `<li>${address}</li>`).join('');}
+
+     // Fetch and display participants
+	 contract.methods.getParticipants().call()
+	 .then(displayParticipants)
+	 .catch(console.error);
+ }
+  
+ function displayParticipants(participants) {
+	 const participantsList = document.getElementById('participantsList');
+	 participantsList.innerHTML = participants.map(address => `<li>${address}</li>`).join('');}
