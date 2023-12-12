@@ -53,7 +53,6 @@ window.addEventListener('load', async () => {
             initApp();
         } catch (error) {
             console.error("Access to your Ethereum account rejected.");
-			alert("Access to your Ethereum account rejected.");
         }
     } else {
         console.error("Please install MetaMask!");
