@@ -21,7 +21,7 @@ const abi = [
 	},
 	{
 		"inputs": [],
-		"name": "getParticipants",
+		"name": "players",
 		"outputs": [
 			{
 				"internalType": "address payable[]",
