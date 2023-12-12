@@ -1,4 +1,4 @@
-const contractAddress = "0xA8500e51A0e44816887a8DFbbcbB230bE73052E1";
+const contractAddress = "0x371d7ccb398867206185d2bed629f04d1afd7d8e";
 const abi = [
 	{
 		"inputs": [],
@@ -55,14 +55,14 @@ function initApp() {
         contract.methods.enter().send({ from: accounts[0], value: web3.utils.toWei("0.01", "ether") })
         .then(() => console.log("Entered the lottery!"))
         .catch(console.error);
-		alert("Lottery Entered, click CONFIRM when Metamask popup");
+		alert("Lottery Entered, quickly click CONFIRM when Metamask popup");
     });
  
     document.getElementById('pickWinner').addEventListener('click', () => {
         contract.methods.pickWinner().send({ from: accounts[0] })
         .then(() => console.log("Winner picked!"))
         .catch(console.error);
-		alert("Winner Picked");
+		alert("Winner Clicked");
     });
  
     // Fetch and display participants
