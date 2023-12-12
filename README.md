@@ -1,1 +1,3 @@
-# lottest
+# Lottery test 
+#on 
+#Sepolia Testnet
