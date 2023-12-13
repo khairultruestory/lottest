@@ -170,3 +170,8 @@ function initApp() {
  function displayParticipants(participants) {
 	 const participantsList = document.getElementById('participantsList');
 	 participantsList.innerHTML = participants.map(address => `<li>${address}</li>`).join('');}
+
+ function displayManager(manager){
+	const showmanager = document.getElementById('showmanager');
+	showmanager.innerHTML = manager.address();
+ }
