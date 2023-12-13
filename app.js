@@ -1,4 +1,4 @@
-const contractAddress = "0x01eddfe984d3a11ecea9d8789ef880b30ece9ff9";
+const contractAddress = "0xe8961dfe3240d3671dbf765faa9d5ba0ecfa3464";
 const abi = [
 	{
 		"inputs": [],
@@ -20,6 +20,19 @@ const abi = [
 				"internalType": "address payable[]",
 				"name": "",
 				"type": "address[]"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "manager",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
 			}
 		],
 		"stateMutability": "view",
@@ -62,6 +75,45 @@ const abi = [
 		"name": "pickWinner",
 		"outputs": [],
 		"stateMutability": "payable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address payable",
+				"name": "_manager",
+				"type": "address"
+			}
+		],
+		"name": "setManager",
+		"outputs": [],
+		"stateMutability": "payable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "winner",
+		"outputs": [
+			{
+				"internalType": "address payable",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "winningnum",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
 		"type": "function"
 	}
 ];
