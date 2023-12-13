@@ -1,4 +1,4 @@
-const contractAddress = "0xe8961dfe3240d3671dbf765faa9d5ba0ecfa3464";
+const contractAddress = "0x2F1c12057e3f4a48500223D6506CCAF480035C16";
 const abi = [
 	{
 		"inputs": [],
@@ -165,6 +165,8 @@ function initApp() {
 	 contract.methods.getParticipants().call()
 	 .then(displayParticipants)
 	 .catch(console.error);
+
+	 contract.manager.call();
  }
   
  function displayParticipants(participants) {
