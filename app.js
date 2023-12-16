@@ -140,11 +140,18 @@ window.addEventListener('load', async () => {
  
 function initApp() {
     contract = new web3.eth.Contract(abi, contractAddress);
- 
+	//document.getElementById('showmanager').innerText = manageraddress;
     document.getElementById('connectWallet').addEventListener('click', async () => {
-        accounts = await web3.eth.getAccounts();
+        const accounts = await web3.eth.getAccounts();
+		//const manageraddress = await contract.methods.manager().call();
+		//const manageraddress = await contract.manager.call();
+		//const accounts = await window.ethereum.request({ method: 'eth_accounts' });
+        //const address = accounts[0];
+		document.getElementById('walletAddress').innerText = accounts;
+		//document.getElementById('showmanager').innerText = manageraddress;
         console.log("Connected account:", accounts[0]);
 		alert("Wallet Connected");
+		
     });
  
     document.getElementById('enterLottery').addEventListener('click', () => {
@@ -166,14 +173,14 @@ function initApp() {
 	 .then(displayParticipants)
 	 .catch(console.error);
 
-	 contract.manager.call();
+
+
+
  }
   
  function displayParticipants(participants) {
 	 const participantsList = document.getElementById('participantsList');
 	 participantsList.innerHTML = participants.map(address => `<li>${address}</li>`).join('');}
 
- function displayManager(manager){
-	const showmanager = document.getElementById('showmanager');
-	showmanager.innerHTML = manager.address();
- }
+
+ 
