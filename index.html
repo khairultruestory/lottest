@@ -312,7 +312,7 @@ let cc = bb*10**16;
 async function randomWinner(){
 	let tx1 = await contract.methods.getParticipants().call();
 	  let tx2 = tx1.length;
-	  let tx3 = tx2*10**16;	
+	  let tx3 = tx2*10**18;	
 	contract.methods.pickWinner().send({ from: accounts[0], value: tx3})
         .then(() => console.log("Winner picked!"))
         .catch(console.error);
